@@ -9,7 +9,7 @@ def pdf_to_text(pdf_folder_path):
     # Get the current directory path
     current_directory = os.getcwd()
     # Specify the folder names
-    pdf_folder = "PDF FILES"
+    pdf_folder = "C:\\Users\\allet\\OneDrive\\PDF FILES"
     text_folder = "Text files"
     # Construct the full directory paths
     pdf_directory = os.path.join(current_directory, pdf_folder)
@@ -29,13 +29,11 @@ def pdf_to_text(pdf_folder_path):
                 text_file.write(text_content.decode('utf-8'))
             print(f"Converted {filename} to {text_filename}")
 
-
 def convert_to_text(pdf):
     proposal_text = ""
     for page in pdf.pages:
         proposal_text += page.extract_text()
     return proposal_text
-
 
 def extract_title(proposal_text):
     title = re.search(r"Title:(.*?)\n", proposal_text, re.I)
@@ -66,6 +64,10 @@ def calculate_title(title):
 
     return title_length, length_pass
 
+def extract_first_eight_chars(pdf_path):
+    pdf_filename = os.path.splitext(os.path.basename(pdf_path))[0]
+    first_eight_chars = pdf_filename[:8]
+    return first_eight_chars
 
 def file_size(pdf_path):
     file_size = os.path.getsize(pdf_path) / (1024 * 1024)
@@ -129,11 +131,14 @@ def check_pi_and_submitter(pi, submitted_by):
 
     # check if last name in submitted by string
     if not last_name == None:
-        if last_name in (submitted_by.lower()).strip():
+        if not last_name in (submitted_by.lower()).strip():
             alert_to_same = True
-
     return alert_to_same
-
+#def extract_narrative(pdf_text):
+    pdf_text = pdf_text.lower()
+    count = pdf_text.count("significance of research")
+    print("appears: times")
+    print(count)
 
 
     

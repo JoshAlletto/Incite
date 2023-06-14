@@ -5,14 +5,15 @@ from openpyxl.styles import PatternFill, Font
 def add_info_to_excel(excel_path, all_pdfs_info): 
 
     # column details
-    title_column = 'A'
-    title_length_column = 'B'
-    total_file_size_column = 'C'
-    pi_column = "D"
-    submitted_by_column = "E"
-    date_column = "F"
-    phd_answer_column = "V"
-    early_career_column = "U"
+    Proposal_Number_column = 'A'
+    title_column = 'B'
+    title_length_column = 'C'
+    total_file_size_column = 'D'
+    pi_column = "E"
+    submitted_by_column = "F"
+    date_column = "G"
+    phd_answer_column = "W"
+    early_career_column = "V"
 
 
     # load in excel workbook
@@ -23,7 +24,7 @@ def add_info_to_excel(excel_path, all_pdfs_info):
     sheet = wb[sheet_name]
 
     # read in all pdf info and insert into excel sheet
-    start_row = 5
+    start_row = 8
     for i in range(len(all_pdfs_info)): 
         
         for key,value in all_pdfs_info[i].items():
@@ -31,7 +32,12 @@ def add_info_to_excel(excel_path, all_pdfs_info):
             cell_coord = None
 
             # add all info to excel
-            if key == "title":
+            if key == "proposal number":
+                cell_coord = str(Proposal_Number_column) + str(start_row+i)
+                cell = sheet[cell_coord]
+                cell.value = value
+
+            elif key == "title":
                 cell_coord = str(title_column) + str(start_row+i)
                 cell = sheet[cell_coord]
                 cell.value = value
@@ -72,11 +78,12 @@ def add_info_to_excel(excel_path, all_pdfs_info):
                 cell.value = value
 
             elif key == "pi_submitter_alert": 
-                cell_coord = str(submitted_by_column) + str(start_row+i)
-                fill_color = 'ffffa1'
-                fill = PatternFill(start_color=fill_color, end_color=fill_color, fill_type='solid')
-                cell = sheet[cell_coord]
-                cell.fill = fill
+                if value == True:
+                    cell_coord = str(submitted_by_column) + str(start_row+i)
+                    fill_color = 'ffffa1'
+                    fill = PatternFill(start_color=fill_color, end_color=fill_color, fill_type='solid')
+                    cell = sheet[cell_coord]
+                    cell.fill = fill
 
             else:
                 print(f"ERROR: unable to add into to excel. {key}: {value}")

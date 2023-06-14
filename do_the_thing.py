@@ -10,6 +10,8 @@ from helper_functions import extract_Early_Track
 from helper_functions import extract_submitted_by
 from helper_functions import check_pi_and_submitter
 from excel_functions import add_info_to_excel
+from helper_functions import extract_first_eight_chars
+#from helper_functions import extract_narrative
 import re
 import os
 from PyPDF2 import PdfReader
@@ -21,7 +23,7 @@ def check_all(pdf_directory):
     all_pdfs = []
 
     for file in os.listdir(pdf_directory):
-        #print(file)
+        print(file)
 
         all_info = {}
 
@@ -62,6 +64,10 @@ def check_all(pdf_directory):
             date = extract_date(pdf_text)
             all_info["date"] = date
 
+            # extract proposal number
+            first_eight_chars = extract_first_eight_chars(pdf_path)
+            all_info["proposal number"] = first_eight_chars
+
             # extract file size
             pdf_size, file_check = file_size(pdf_path)
             all_info["file size"] = pdf_size
@@ -74,6 +80,8 @@ def check_all(pdf_directory):
             #answering the early track 
             EarlyTrack = extract_Early_Track(proposal)
             all_info["EarlyTrack"] = EarlyTrack
+
+            #extract_narrative(pdf_text)
 
 
 
@@ -100,7 +108,8 @@ def check_all(pdf_directory):
 
 
     # add all collected info to excel
-    excel_path = "/Users/cstone/Documents/RapidPrototypingLab/GitRepos/proposal_checks/text_excel.xlsx"
+    #excel_path = "/Users/cstone/Documents/RapidPrototypingLab/GitRepos/proposal_checks/text_excel.xlsx"
+    excel_path = "C:\\Users\\allet\\OneDrive\\Desktop\\Incite\\checklist.xlsx"
     add_info_to_excel(excel_path, all_pdfs)
             
 
@@ -110,5 +119,5 @@ def check_all(pdf_directory):
 
 
 
-check_all("PDF FILES")
+check_all("C:\\Users\\allet\\OneDrive\\PDF FILES")
 
