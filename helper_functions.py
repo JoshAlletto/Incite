@@ -4,31 +4,6 @@ import pdfplumber
 import re
 import math
 
-
-def pdf_to_text(pdf_folder_path):
-    # Get the current directory path
-    current_directory = os.getcwd()
-    # Specify the folder names
-    pdf_folder = "C:\\Users\\allet\\OneDrive\\PDF FILES"
-    text_folder = "Text files"
-    # Construct the full directory paths
-    pdf_directory = os.path.join(current_directory, pdf_folder)
-    text_directory = os.path.join(current_directory, text_folder)
-    # Iterate over the PDF files in the directory
-    for filename in os.listdir(pdf_directory):
-        if filename.endswith('.pdf'):
-        # Full path of the PDF file
-            pdf_path = os.path.join(pdf_directory, filename)
-            # Read the text content from the PDF file
-            text_content = textract.process(pdf_path, method='pdfminer')
-            # Create the text file path
-            text_filename = os.path.splitext(filename)[0] + '.txt'
-            text_path = os.path.join(text_directory, text_filename)
-            # Save the extracted text to a text file
-            with open(text_path, 'w', encoding='utf-8') as text_file:
-                text_file.write(text_content.decode('utf-8'))
-            print(f"Converted {filename} to {text_filename}")
-
 def convert_to_text(pdf):
     proposal_text = ""
     for page in pdf.pages:

@@ -109,7 +109,7 @@ def check_all(pdf_directory):
 
     # add all collected info to excel
     #excel_path = "/Users/cstone/Documents/RapidPrototypingLab/GitRepos/proposal_checks/text_excel.xlsx"
-    excel_path = "C:\\Users\\allet\\OneDrive\\Desktop\\Incite\\checklist.xlsx"
+    excel_path = "template.xlsx"
     add_info_to_excel(excel_path, all_pdfs)
             
 
@@ -119,5 +119,5 @@ def check_all(pdf_directory):
 
 
 
-check_all("C:\\Users\\allet\\OneDrive\\PDF FILES")
+check_all("PDF FILES") 
 
