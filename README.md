@@ -52,13 +52,17 @@ STEP 7: Create a folder inside of your new incite folder named PDF FILES that wi
 
 ![Alt text](image-8.png)
 
-STEP 8: Open a new excel sheet that will act as a blank template for data to be entered. Call this excel sheet "template" and add it to your incite folder.
+STEP 8: Download zip file of PDFs from Peernet and transfer them into this folder
 
-![Alt text](image-9.png)
+STEP 9: Download the latest excel template from box and put it in the Incite folder. Call this sheet"template"
 
-STEP 9: Running your code in your terminal(scroll down for LINUX/MAC)
+For mac, your folder should now look like this:
 
-Step 10(windows users): Within your anaconda powershell prompt window open, locate to your code so that we can run the script.  Enter the following commands line by line until you reach the desired location
+![Alt text](image-11.png)
+
+STEP 10: Running your code in your terminal(scroll down for LINUX/MAC)
+
+Step 11(windows users): Within your anaconda powershell prompt window open, locate to your code so that we can run the script.  Enter the following commands line by line until you reach the desired location
 
     'conda activate proposals'
 
@@ -77,9 +81,8 @@ now enter in the following command
 
 Now everything should have run correctly and you are done!
 You can view your completed excel sheet in the updated incite file.
-this is a test
 
-
+Step 11(Mac/Linux): Within your regular terminal, activate the neccesary packages above by locating to your folder as shown above and running the python code.
 
 
 
