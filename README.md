@@ -1,7 +1,7 @@
 # Incite
 ## Running the proposal code steps:
 STEP 1: Click on green code button
-![
+![Picture of Repo
 ](image-3.png)
 STEP 2: Click download zip, and then unzip the folder
 
