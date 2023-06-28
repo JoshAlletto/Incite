@@ -1,27 +1,26 @@
 # Incite
 ## Running the proposal code steps:
 STEP 1: Click on green code button
-![Picture of Repo
-](image-3.png)
+![Picture of Repo](GitHub.png)
 STEP 2: Click download zip, and then unzip the folder
 
 STEP 3: Transfer this folder into your desktop by extracting the files and browsing into your desktop folder.
 
-![Alt text](image-6.png)
+![Picture of Folder](ExtractedFolder.png)
 
 Now your new files should be able to be found when you look in your desktop files.
 
-![](image-7.png)
+![Incite Folder](InciteFolder.png)
 
 STEP 4: If not installed already, download Anaconda
 
-Link to install anaconda.com/download/ : ![Alt text](image-4.png)
+Link to install anaconda.com/download/ : ![Anaconda](Conda.png)
 
 Step 5: FOR WINDOWS USERS
 
 search for anaconda using windows search bar
 
-![Alt text](image-5.png)
+![Powershell terminal](AnacondaPowershell.png)
 
 use anaconda powershell prompt(will not work with regular anaconda prompt)
 
@@ -50,7 +49,7 @@ You will now begin pip installing all packages(press enter after each line)
 
 STEP 7: Create a folder inside of your new incite folder named PDF FILES that will hold all the proposal PDFS (as shown in picture below) 
 
-![Alt text](image-8.png)
+![Folder of PDFS](PDFS.png)
 
 STEP 8: Download zip file of PDFs from Peernet and transfer them into this folder
 
@@ -58,7 +57,7 @@ STEP 9: Download the latest excel template from box and put it in the Incite fol
 
 For mac, your folder should now look like this:
 
-![Alt text](image-11.png)
+![Folder picture for Max/Linux](MacFolder.png)
 
 STEP 10: Running your code in your terminal(scroll down for LINUX/MAC)
 
@@ -73,7 +72,7 @@ Step 11(windows users): Within your anaconda powershell prompt window open, loca
     'ls'
 you should now be here 
 
-![Alt text](image-10.png)
+![Location in terminal](TerminalLocation.png)
 
 now enter in the following command 
 
